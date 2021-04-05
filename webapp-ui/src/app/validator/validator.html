@@ -1,0 +1,15 @@
+<div class="clr-form-control cm-input">
+    <div class="clr-control-container" [class.clr-error]="!isValid()">
+        <div class="clr-input-wrapper">
+            <ng-content></ng-content>
+            <clr-icon aria-hidden="true" role="none" class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+        </div>
+        <span class="clr-subtext" [hidden]="!(!isValid())">{{error}}</span>
+    </div>
+</div>
+
+
+
+
+
+

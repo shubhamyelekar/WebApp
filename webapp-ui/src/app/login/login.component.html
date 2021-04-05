@@ -1,0 +1,37 @@
+<div class="login-wrapper">
+  <div *ngIf="showSpinner" class="spinner-wrapper">
+    <div class="spinner login-spinner">Loading ...</div>
+  </div>
+  <form clrForm class="login">
+    <section class="title">
+      <h3 class="welcome">Welcome to</h3>
+      WebApp
+    </section>
+    <div class="login-group">
+      <div>
+        <label class="clr-sr-only">Username</label>
+        <app-validator [error]='isValidUserName(false)'>
+          <input type="text" name="username" #username="ngModel" id="username" class="clr-input" placeholder="Username"
+                 [(ngModel)]="formUsername"/>
+        </app-validator>
+      </div>
+      <div>
+        <label class="clr-sr-only">Password</label>
+        <app-validator [error]='isValidPassword(false)'>
+          <input class="clr-input" type="password" name="password" id="password" #password="ngModel"
+                 placeholder="Password"
+                 [(ngModel)]="formPassword"/>
+        </app-validator>
+      </div>
+
+      <div class="error active" *ngIf="showError">
+        Invalid user name or password
+      </div>
+
+      <button (click)="submitForm()" [disabled]="!isFormValid()" type="submit" class="login-btn btn btn-primary">Login
+      </button>
+    </div>
+  </form>
+</div>
+
+
