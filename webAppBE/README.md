@@ -1,4 +1,5 @@
 **This is a SpringBoot project**
+
 This can be run using `mvn spring-boot:run`
 
 Once started API docs can be found at `http://localhost:8080/spring-security-rest/api/swagger-ui/`
